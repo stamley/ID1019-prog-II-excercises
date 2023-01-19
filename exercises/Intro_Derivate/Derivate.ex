@@ -11,7 +11,7 @@ defmodule Derivate do
 
 
   def test1() do
-    e = {:log,
+    e = {:cos,
       {:mul, {:num, 2}, {:var, :x}}}
     d = derive(e, :x)
     # Calculates the derivated function with a given x
@@ -125,7 +125,7 @@ defmodule Derivate do
   def derive({:sin, {:num, _}}, _) do {:num, 0} end
   def derive({:sin, e}, v) do {:mul, {:cos, e}, derive(e, v)} end
   def derive({:cos, {:num, _}}, _) do {:num, 0} end
-  def derive({:cos, e}, v) do {:mul, {:mul, -1, {:sin, e}}, derive(e, v)} end
+  def derive({:cos, e}, v) do {:mul, {:mul, {:num, -1}, {:sin, e}}, derive(e, v)} end
 
   # Cleans upp the expression when printing
   def pprint({:num, n}) do "#{n}" end
