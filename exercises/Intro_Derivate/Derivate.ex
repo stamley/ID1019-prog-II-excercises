@@ -23,7 +23,6 @@ defmodule Derivate do
           }
         }
     d = derive(e, :x)
-    # Calculates the derivated function with a given x
     c = calc(e, :x, 5)
     IO.write("expression: #{pprint(e)}\n")
     IO.write("derivative: #{pprint(d)}\n")
@@ -112,7 +111,7 @@ defmodule Derivate do
   def simplify_cos({:cos, {:num, n}}) do {:num, :math.cos(n)} end
   def simplify_cos(e) do e end
 
-  # derives a given function.
+  # Derives a given function.
   def derive({:num, _}, _) do {:num, 0} end
   def derive({:var, v}, v) do {:num, 1} end
   def derive({:var, _}, _) do {:num, 0} end
@@ -147,5 +146,4 @@ defmodule Derivate do
   def pprint({:sin, e}) do "sin(#{pprint(e)})" end
   def pprint({:cos, e}) do "cos(#{pprint(e)})" end
   def pprint(e) do "#{e}" end
-
 end
