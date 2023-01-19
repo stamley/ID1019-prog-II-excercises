@@ -11,8 +11,17 @@ defmodule Derivate do
 
 
   def test1() do
-    e = {:cos,
-      {:mul, {:num, 2}, {:var, :x}}}
+    e = {:add,
+          {:mul,
+            {:num, 2}, {:var, :x}},
+          {:add,
+            {:log,
+              {:mul,
+                {:num, 4}, {:var, :x}}},
+            {:exp,
+              {:var, :x}, {:num, 9}}
+          }
+        }
     d = derive(e, :x)
     # Calculates the derivated function with a given x
     c = calc(e, :x, 5)
