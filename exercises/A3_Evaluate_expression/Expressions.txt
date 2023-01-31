@@ -1,0 +1,10 @@
+t = Eval.env([x: 3, y: 4, z: 5])
+
+Eval.eval({:sub, {:add, {:mul, {:num, 3}, {:var, :x}}, {:num, 0}}, {:div, {:var, :y}, {:var, :z}}}, t)
+{:quot, 41, 5}
+Eval.eval({:mul, {:add, {:mul, {:var, :y}, {:num, 0}}, {:div, {:num, 0}, {:var, :z}}}, {:div, {:var, :x}, {:num, 3}}}, t)
+{:num, 0}
+Eval.eval({:div, {:var, :y}, {:num, 0}}, t)
+:error
+Eval.eval({:add, {:div, {:num, 5}, {:num, 7}}, {:div, {:div, {:num, 8}, {:num, 10}},{:div, {:var, :x}, {:num, 4}}}}, t)
+{:quot, 187, 105}
