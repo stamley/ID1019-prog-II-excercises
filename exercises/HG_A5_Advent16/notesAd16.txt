@@ -1,0 +1,47 @@
+Action:
+1 minute to move between valves
+1 minute to open valve
+
+Graph mapping each way between valves
+At most 5 links
+{:valve, "EJ",{:flow, 24}, {:links, ["AA", "BB", :nil, :nil, :nil]}}
+
+List of pressurerates (tuples to have base value beside it?) 
+increasing by itself for each action
+
+Recursively try each way? (Djikstras?, dfs?)
+
+
+strategy:
+Testa varje väg tills minuterna tar slut.
+1. Börja i :AA
+	a. För varje länk i :AA testa varje väg
+	ex:    :AA -> :ON && :AA -> :UF && :AA -> :WR
+	också: :ON -> :XX && :ON -> :ZZ
+	Blir den gången man går till länken, men också när man aktiverar valvet
+	Alltså, testa båda möjligheterna att antingen bara gå till länken eller 
+	också aktivera valvet.
+
+
+Går ner i :AA's olika paths
+1. Gå ner i första pathen
+
+
+
+
+		AA
+	     BB CC DD
+
+endConnection(socket, arrayn) -> byteArray
+
+
+Efter youtube:
+
+Create map with all "important" nodes, and the distance between all other 
+important nodes (in minutes).
+
+
+
+
+
+

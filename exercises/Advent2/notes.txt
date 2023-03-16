@@ -1,0 +1,12 @@
+Rock:     A, X, 
+Paper: 	  B, Y
+Scissors: C, Z
+
+Rock > Scissors -> A > Z
+Paper > Rock -> B > X
+Scissors > Paper -> C > Y
+
+you - 1 % 3 == opp -> victory
+
+
+5 + 8 + 9 + 3 + 8 + 9

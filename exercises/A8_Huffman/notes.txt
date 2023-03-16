@@ -1,0 +1,25 @@
+Kallocain before compressing contains 318 997 characters which will correspond to 2 551 976 bits, (one byte each)
+After compressing it the sequence contains 1 428 800 bits which gives means that the compressed text is only around 
+half the size of the original (56%).
+
+
+Benches:
+Kallocain (0.3mb):
+Encoding: 0.162611
+Decoding: 2.895462
+Lorem Ipsum (2mb):
+Encoding: 1.095372
+Decoding: 9.435648
+Random chars (4mb):
+Encoding: 1.245592
+Decoding: 10.471622
+Random ascii (4mb):
+Encoding: 2.09326
+Decoding: 41.357107 
+
+TC:
+n to create the encoding table where n is the length of the string.
+It takes log(n) to find the translation of a character, and since there
+needs to be done n translations (each character) the complexity will be
+n*log(n). Which gives n + n*log(n).
+The time complexity for Huffman encoding and decoding will belong to O(n*log(n)

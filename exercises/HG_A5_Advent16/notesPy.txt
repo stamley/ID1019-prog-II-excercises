@@ -1,0 +1,29 @@
+
+def compress_graph
+	for each valve in rates -> Enum.map(rates, fn ....)
+	
+	if valve is not AA and has no flow rate, go to next valve
+
+	Add valve to array of important valves if not AA
+
+		
+	Create a queue with the current node as the first elemnet
+
+	While there is atleast one node in the queue,
+	check the links of the current node
+		-> if they are already visited, check the next link
+		Otherwise add them to the visited (acc?) list
+		-> if the flow rate of the current link is non-zero
+		Add distance from the current valve to the current link + 1
+
+		Add the current distance + 1 and the current link to the queue
+
+
+
+	return	distances between each "important" pair
+
+
+# head == {5, :DD}
+def pop([head|tail]) do {head, tail} end 
+def queue([], x) do [x] end
+def queue(queue, x) do queue ++ x end
